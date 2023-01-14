@@ -32,14 +32,14 @@ Basic usage:
 Makefile tuned for basic MPI compiling, including hybrid MPI/OpenMP.
 Presumes your MPI source files will have names like `*_mpi.c` or `*_mpi.cpp`.
 
-Use as `make -f Makefile.omp foo_omp` to compile `foo_omp.c` to an executable, or `make -f Makefile.mpi clean` to remove executables and object files.
+Use as `make -f Makefile.omp foo_mpi` to compile `foo_mpi.c` or `foo_mpi.cpp` to an executable, or `make -f Makefile.mpi clean` to remove executables and object files.
 
 ## Makefile.omp
 
 Makefile tuned for basic OpenMP compiling.
 Presumes your OpenMP source files will have names like `*_omp.c` or `*_omp.cpp`.
 
-Use as `make -f Makefile.omp foo_omp` to compile `foo_omp.c` to an executable, or `make -f Makefile.omp clean` to remove executables and object files.
+Use as `make -f Makefile.omp foo_omp` to compile `foo_omp.c` or `foo_omp.cpp` to an executable, or `make -f Makefile.omp clean` to remove executables and object files.
 
 ## Makefile.serial
 
@@ -47,7 +47,7 @@ Makefile tuned for serial compiling.
 Honestly could just use `Makefile.omp` since the OpenMP compiler flags won't do anything to a program that doesn't have `#pragma openmp` lines.
 But this one presumes your serial source files will have names like `*_serial.c` or `*_serial.cpp`.
 
-Use as `make -f Makefile.serial foo_serial` to compile `foo_serial.c` to an executable, or `make -f Makefile.serial clean` to remove executables and object files.
+Use as `make -f Makefile.serial foo_serial` to compile `foo_serial.c` or `foo_serial.cpp` to an executable, or `make -f Makefile.serial clean` to remove executables and object files.
 
 ## hw_serial.c, hw_omp.c, hw_omp_mpi.c, hwpp_serial.cpp, hwpp_omp.cpp, hwpp_omp_mpi.cpp
 
