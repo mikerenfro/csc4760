@@ -7,7 +7,7 @@ Template repository for CSC4760/5760
 Configuration file for [HashiCorp Vagrant](https://developer.hashicorp.com/vagrant/downloads) to build a VirtualBox VM similar to an HPC node.
 Also demonstrates compiling and running both an OpenMP and a hybrid MPI/OpenMP "Hello, world" program.
 
-Currently only supports Intel processors on Windows, macOS, or Linux.
+Currently only supports Intel-compatible processors on Windows, macOS, or Linux.
 ARM processors (including Apple M1 and M2) still need to be tested, and this file is almost certainly not going to work out of the box.
 Some ARM Vagrant boxes only work with VMware or Parallels virtualization software.
 
