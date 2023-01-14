@@ -1,0 +1,23 @@
+# https://stackoverflow.com/a/2481326
+CXX=mpic++
+CC=mpicc
+RM=rm -f
+CXXFLAGS=-fopenmp
+CFLAGS=-fopenmp
+empty:=
+
+CPPSRCS=$(wildcard *_mpi.cpp)
+CPPOBJS=$(subst .cpp,.o,$(CPPSRCS))
+CPPEXES=$(subst .cpp,$(empty),$(CPPSRCS))
+
+CSRCS=$(wildcard *_mpi.c)
+COBJS=$(subst .c,.o,$(CSRCS))
+CEXES=$(subst .c,$(empty),$(CSRCS))
+
+all: $(CPPEXES) $(CEXES)
+
+clean:
+	$(RM) $(CPPOBJS) $(CPPEXES) $(COBJS) $(CEXES)
+
+distclean: clean
+	$(RM) *~
