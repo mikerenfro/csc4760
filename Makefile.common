@@ -1,0 +1,16 @@
+RM=rm -f
+empty:=
+
+CPPOBJS=$(subst .cpp,.o,$(CPPSRCS))
+CPPEXES=$(subst .cpp,$(empty),$(CPPSRCS))
+
+COBJS=$(subst .c,.o,$(CSRCS))
+CEXES=$(subst .c,$(empty),$(CSRCS))
+
+all: $(CPPEXES) $(CEXES)
+
+clean:
+	$(RM) $(CPPOBJS) $(CPPEXES) $(COBJS) $(CEXES)
+
+distclean: clean
+	$(RM) *~

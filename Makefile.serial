@@ -1,23 +1,10 @@
 # https://stackoverflow.com/a/2481326
 CXX=g++
 CC=gcc
-RM=rm -f
 CXXFLAGS=
 CFLAGS=
-empty:=
 
 CPPSRCS=$(wildcard *_serial.cpp)
-CPPOBJS=$(subst .cpp,.o,$(CPPSRCS))
-CPPEXES=$(subst .cpp,$(empty),$(CPPSRCS))
-
 CSRCS=$(wildcard *_serial.c)
-COBJS=$(subst .c,.o,$(CSRCS))
-CEXES=$(subst .c,$(empty),$(CSRCS))
 
-all: $(CPPEXES) $(CEXES)
-
-clean:
-	$(RM) $(CPPOBJS) $(CPPEXES) $(COBJS) $(CEXES)
-
-distclean: clean
-	$(RM) *~
+include Makefile.common
