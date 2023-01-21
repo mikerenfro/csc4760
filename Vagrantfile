@@ -15,26 +15,26 @@ Vagrant.configure("2") do |config|
 
     echo "Compiling Serial Hello, Worlds"
     make -f Makefile.serial hw_serial hwpp_serial
-    echo "Running C Serial Hello, World"
-    ./hw_serial
-    echo "Running C++ Serial Hello, World"
-    ./hwpp_serial
+    echo "Sleeping for permission sync, running C Serial Hello, World"
+    sleep 1; ./hw_serial
+    echo "Sleeping for permission sync, running C++ Serial Hello, World"
+    sleep 1; ./hwpp_serial
     make -f Makefile.serial clean
   
     echo "Compiling OpenMP Hello, Worlds"
     make -f Makefile.omp hw_omp hwpp_omp
-    echo "Running C OpenMP Hello, World"
-    ./hw_omp
-    echo "Running C++ OpenMP Hello, World"
-    ./hwpp_omp
+    echo "Sleeping for permission sync, running C OpenMP Hello, World"
+    sleep 1; ./hw_omp
+    echo "Sleeping for permission sync, running C++ OpenMP Hello, World"
+    sleep 1; ./hwpp_omp
     make -f Makefile.omp clean
   
     echo "Compiling Hybrid MPI/OpenMP Hello, Worlds"
     make -f Makefile.mpi hw_omp_mpi hwpp_omp_mpi
-    echo "Running C Hybrid MPI/OpenMP Hello, World"
-    mpirun -np 2 -x OMP_NUM_THREADS=2 ./hw_omp_mpi
-    echo "Running C++ Hybrid MPI/OpenMP Hello, World"
-    mpirun -np 2 -x OMP_NUM_THREADS=2 ./hwpp_omp_mpi
+    echo "Sleeping for permission sync, running C Hybrid MPI/OpenMP Hello, World"
+    sleep 1; mpirun -np 2 -x OMP_NUM_THREADS=2 ./hw_omp_mpi
+    echo "Sleeping for permission sync, running C++ Hybrid MPI/OpenMP Hello, World"
+    sleep 1; mpirun -np 2 -x OMP_NUM_THREADS=2 ./hwpp_omp_mpi
     make -f Makefile.mpi clean
   
     SHELL
