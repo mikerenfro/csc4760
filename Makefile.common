@@ -1,3 +1,6 @@
+CXXFLAGS=-fopenmp
+CFLAGS=-fopenmp
+
 RM=rm -f
 empty:=
 

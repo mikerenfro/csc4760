@@ -1,10 +1,9 @@
 # https://stackoverflow.com/a/2481326
+
+include Makefile.common
+
 CXX=mpic++
 CC=mpicc
-CXXFLAGS=-fopenmp
-CFLAGS=-fopenmp
 
 CPPSRCS=$(wildcard *_mpi.cpp)
 CSRCS=$(wildcard *_mpi.c)
-
-include Makefile.common
