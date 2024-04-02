@@ -16,8 +16,9 @@ int main(int argc, char *argv[]) {
     iam = omp_get_thread_num(); /* Which thread am I? */
     // printf("Host %s, process %d of %d, thread %d of %d\n",
     //        processor_name, rank, numprocs, iam, np);
-    std::cout << "Host " << processor_name << ", process " << rank <<
-    " of " << numprocs << ", thread " << iam << " of " << np << std::endl;
+    std::cout << "I'm on node (compute server) " << processor_name <<
+      ", rank (parallel process) " << rank << " of " << numprocs <<
+      ", thread (CPU in process)" << iam << " of " << np << std::endl;
   }
   MPI_Finalize();
 }
