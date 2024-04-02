@@ -18,7 +18,7 @@ int main(int argc, char *argv[]) {
     //        processor_name, rank, numprocs, iam, np);
     std::cout << "I'm on node (compute server) " << processor_name <<
       ", rank (parallel process) " << rank << " of " << numprocs <<
-      ", thread (CPU in process)" << iam << " of " << np << std::endl;
+      ", thread (CPU in process) " << iam << " of " << np << std::endl;
   }
   MPI_Finalize();
 }
