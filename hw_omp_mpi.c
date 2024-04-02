@@ -14,7 +14,7 @@ int main(int argc, char *argv[]) {
   {
     np = omp_get_num_threads(); /* How many threads in this task? */
     iam = omp_get_thread_num(); /* Which thread am I? */
-    printf("Host %s, process %d of %d, thread %d of %d\n",
+    printf("I'm on node (compute server) %s, rank (parallel process) %d of %d, thread (CPU in process) %d of %d\n",
            processor_name, rank, numprocs, iam, np);
   }
   MPI_Finalize();
