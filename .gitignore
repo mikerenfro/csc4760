@@ -42,3 +42,5 @@
 !hwpp_omp_mpi.cpp
 !hwpp_omp.cpp
 !hwpp_serial.cpp
+
+.vscode/settings.json
