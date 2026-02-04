@@ -34,13 +34,4 @@
 # Vagrant bits
 .vagrant
 
-*.c
-*.cpp
-!hw_omp_mpi.c
-!hw_omp.c
-!hw_serial.c
-!hwpp_omp_mpi.cpp
-!hwpp_omp.cpp
-!hwpp_serial.cpp
-
 .vscode/settings.json
