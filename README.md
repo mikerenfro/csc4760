@@ -53,3 +53,30 @@ Use as `make -f Makefile.serial foo_serial` to compile `foo_serial.c` or `foo_se
 
 Basic C and C++ codes for "Hello, world" for single-core, single-process multi-threaded, and multi-process multi-threaded.
 Good enough to demonstrate how to run serial, OpenMP, and MPI/OpenMP hybrid codes in the Vagrant VM.
+
+## `kokkos` folder
+
+This contains one example from [the Kokkos repository](https://github.com/kokkos/kokkos/tree/develop/example/tutorial/01_hello_world) and a second from [the Kokkos Tutorials repository](https://github.com/kokkos/kokkos-tutorials/tree/main/Exercises/multi_gpu_cuda).
+Each has a CMakeLists.txt file compatible with the Kokkos installations on the TN Tech HPC.
+
+To compile and build `01_hello_world` on the TN Tech HPC, ssh to login.hpc.tntech.edu, `cd` to your `01_hello_world` directory, and then:
+
+1. From the `$` prompt on `login.hpc.tntech.edu`, type `hpcshell --cpus-per-task=2 --account=csc4760-001-2026s`.
+2. Wait for the interactive session to start, and you'll see a `$` prompt from an available compute node.
+3. Load the non-CUDA-enabled version of Kokkos 4.7 with `spack load kokkos@4.7~cuda cmake gcc@14`.
+4. Configure and compile your source file with `mkdir build ; cd build ; cmake .. ; make`
+5. Assuming you get no errors, run your executable with `./tutorial_01_hello_world` (or whatever the name of your final executable is).
+6. Debug, recompile, and rerun your code as needed.
+7. When everything works, remove the build folder with `cd .. ; rm -rf build`.
+8. Type `exit` to get back to the login node.
+
+To compile and build `01_hello_world` on the TN Tech HPC, ssh to login.hpc.tntech.edu, `cd` to your `multi_gpu_cuda` directory, and then:
+
+1. From the `$` prompt on `login.hpc.tntech.edu`, type `hpcshell --cpus-per-task=2 --gpus-per-task=1 --account=csc4760-001-2026s`.
+2. Wait for the interactive session to start, and you'll see a `$` prompt from a compute node with an available GPU.
+3. Load the CUDA-enabled version of Kokkos 4.7 with `spack load kokkos@4.7+cuda cmake gcc@14`.
+4. Configure and compile your source file with `mkdir build ; cd build ; cmake .. ; make`
+5. Assuming you get no errors, run your executable with `./tutorial_01_hello_world` (or whatever the name of your final executable is).
+6. Debug, recompile, and rerun your code as needed.
+7. When everything works, remove the build folder with `cd .. ; rm -rf build`.
+8. Type `exit` to get back to the login node.
